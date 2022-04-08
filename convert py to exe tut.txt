@@ -1,0 +1,16 @@
+How to convert .py to .exe:
+
+1)Install module 'pyinstaller' using command 'pip install pyinstaller' 
+  in command prompt(cmd).
+
+2)Go to the directory where the desired .py is located 
+  and run command prompt(cmd).
+
+3)In cmd, type 'pyinstaller filename.py'
+
+4)That's it. Your .py file gets converted into .exe file
+
+5)Note:If you want to put all the files related to .py file into a 
+  single directory then type 'pyinstaller --onefile filename.py'.
+  (With this command all the related files will be in single folder)
+  

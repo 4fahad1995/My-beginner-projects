@@ -1,0 +1,61 @@
+How to convert .py to .apk using kivy or kivymd:
+
+1)Create a .py file called 'main.py'.
+
+2)Write your code in your 'main.py' file and save it.
+
+3)Now open Google colaboratory.
+
+4)Inside the code editor you need to write these pre-defined codes one-by-one:
+  (these codes are used to create Linux virtual environment)
+
+  !pip install buildozer
+
+  !pip install cython
+
+  !sudo apt-get install -y \
+	python3-pip \
+	build-essential \
+	git \
+	python3 \
+	python3-dev \
+	ffmpeg \
+	libsdl2-dev \
+	libsdl2-image-dev \
+	libsdl2-mixer-dev \
+	libsdl2-ttf-dev \
+	libportmidi-dev \
+	libswscale-dev \
+	libavformat-dev \
+	libavcodec-dev \
+	zlib1g-dev
+
+!sudo apt-get install build-essential libsqlite3-dev sqlite3
+bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev
+libgdbm-compat-dev libzma-dev libreadline-dev libncursesw5-dev
+libffi-dev uuid-dev libffi6
+
+!sudo apt-get install libffi-dev
+
+5)After running these codes you need to import your 'main.py' file
+  into session storage.You can find the option in files section.
+
+6)After uploading the file you need to run this code which will run buildozer
+  virual environment and create 'buildozer.spec' file:
+
+  !buildozer init 
+
+7)Open 'buildozer.spec' file and modify these lines to avoid 
+  crashing during runtime and our app gets created successfully
+   
+  i)Go to line 37,Application requirements and there you need to write
+    'kivy==2.0.0,kivymd,pillow' and save it.
+    (pillow is used for image processing) 
+
+8)Finally, write this code to convert our .py file into .apk:
+  
+  !buildozer android debug deploy run
+
+9)After packaging is done, you can find the .apk file in the 'bin'
+  folder. All you have to do is download the file into your phone
+  and it wil run.
